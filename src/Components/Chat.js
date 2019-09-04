@@ -5,16 +5,15 @@ import Main from "./Main";
 import Footer from "./Footer";
 
 class Chat extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+  constructor(props) {
+    super(props);
+  }
   async componentDidMount() {
     let response = await fetch("https://api.dev.buki.com.ua/frontend_test");
     let data = await response.json();
-    let chatData = data.map(user => ({...user, liked:false}))
+    let chatData = data.map(user => ({ ...user, liked: false }));
 
     this.props.getChatData(chatData);
-    console.log(chatData)
   }
 
   render() {

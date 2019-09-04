@@ -11,7 +11,8 @@ const reducer = (state, action) => {
     case "GET_CHAT_DATA":
       return {
         ...state,
-        chatData: action.data
+        chatData: action.data,
+        isLoaded: action.isLoaded
       };
     case "SET_NEW_MESSAGE":
       return {
@@ -36,10 +37,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         chatData: state.chatData.filter(message => {
-          console.log()
-         return message.id !== action.removedId
+          console.log();
+          return message.id !== action.removedId;
         })
-      }
+      };
+    case "LOADED-DATA":
+      let toggleLoad = action.loaded ? false : true;
+      return {
+        ...state,
+        isLoaded: toggleLoad
+      };
     default:
       return state;
   }

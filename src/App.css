@@ -5,6 +5,7 @@ body {
 
 .App {
   max-width: 991px;
+  width: 90%;
   margin: auto;
   background-color: #1f1f20;
   border-radius: 5px;
@@ -38,6 +39,7 @@ body {
   background: white;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .chat_list {
@@ -150,4 +152,122 @@ body {
 .send_button:hover {
   color: #8cc054;
   background: white;
+}
+
+@media (max-width: 1023px) {
+  .remove_message {
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+  }
+
+  .addition_info {
+    position: static;
+  }
+
+  .time_message {
+    font-size: 12px;
+  }
+
+  .user_info {
+    width: 55%;
+    position: relative;
+  }
+
+  .user_message {
+    font-size: 12px;
+  }
+
+  .avatar {
+    height: 80px;
+    width: 80px;
+  }
+
+  .user_name {
+    margin: 0;
+  }
+
+  .chat_message {
+    padding: 10px;
+    position: relative;
+  }
+
+  .message_input {
+    height: 52px;
+    width: 75%;
+    font-size: 16px;
+  }
+
+  .send_button {
+    border-radius: 13px;
+    font-size: 22px;
+    height: 54px;
+  }
+
+  .heart_like {
+    bottom: 6px;
+    right: 6px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main__title {
+    font-size: 23px;
+  }
+
+  .simple__info {
+    margin: auto;
+    font-size: 10px;
+  }
+
+  .last_message_info {
+    font-size: 6px;
+  }
+
+  .last_message_info {
+    display: none;
+  }
+
+  .chat_message,
+  .self_user {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .addition_info {
+    position: static;
+  }
+
+  .user_info {
+    width: 100%;
+    padding: 0;
+  }
+
+  .time_message {
+    font-size: 9px;
+  }
+
+  .avatar {
+    height: 50px;
+    width: 50px;
+  }
+
+  .remove_message {
+    top: 10px;
+    right: 9px;
+  }
+
+  .message_input {
+    width: 60%;
+  }
+
+  .form {
+    padding: 10px 0 10px 5px;
+  }
+
+  .send_button {
+    font-size: 15px;
+    width: 27%;
+  }
 }
