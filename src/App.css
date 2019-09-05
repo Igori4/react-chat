@@ -43,7 +43,7 @@ body {
 }
 
 .chat_list {
-  padding: 0 10px 20px;
+  padding: 0 10px;
   max-height: 450px;
   overflow-y: scroll;
   background: white;
@@ -67,6 +67,10 @@ body {
 .user_info {
   width: 60%;
   padding: 0 0 0 10px;
+}
+
+.item_to_scroll {
+  height: 150px;
 }
 
 .user_name {
@@ -114,6 +118,7 @@ body {
 }
 
 .remove_message {
+  display: none;
   position: absolute;
   top: -11px;
   right: -20px;
@@ -222,6 +227,7 @@ body {
   .message_input {
     height: 52px;
     width: 75%;
+    padding-left: 10px;
     font-size: 16px;
   }
 
@@ -294,8 +300,9 @@ body {
   }
 
   .message_input {
-    margin-left: 17px;
+    margin-left: 10px;
     width: auto;
+    padding-left: 10px;
   }
 
   .send_button {

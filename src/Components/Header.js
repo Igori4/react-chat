@@ -40,5 +40,3 @@ export default connect(
   mapState,
   null
 )(Header);
-
-// users: action.data.filter((user, i, users) => !users.includes(user)).length

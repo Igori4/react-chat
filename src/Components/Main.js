@@ -18,8 +18,11 @@ class Main extends React.Component {
     this.scrollToBottom();
   }
 
-  componentDidUpdate() {
-    this.scrollToBottom();
+  shouldComponentUpdate(nextProps) {
+    if (this.props.chatData.length !== nextProps.chatData.length) {
+      this.scrollToBottom();
+    }
+    return true;
   }
 
   render() {
@@ -70,6 +73,7 @@ class Main extends React.Component {
               );
             })}
             <li
+              className="item_to_scroll"
               style={{ float: "left", clear: "both" }}
               ref={el => {
                 this.messagesEnd = el;
@@ -95,7 +99,7 @@ const mapDispatch = dispatch => {
   return {
     liked: userId => dispatch({ type: "LIKED_MESSAGE", userId }),
     removeMessage: removedId => dispatch({ type: "REMOVE_MESSAGE", removedId }),
-    isLoaded: loaded => dispatch({type:"LOADED-DATA", loaded})
+    isLoaded: loaded => dispatch({ type: "LOADED-DATA", loaded })
   };
 };
 
